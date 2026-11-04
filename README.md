@@ -4,20 +4,22 @@ DSH 面板里的「国家队 ETF 盘中监测」。纯 Node 直取东方财富 p
 qt.gtimg.cn 的公开行情接口，**零 Python 依赖、零第三方 npm 包、不读本地任何文件**，
 装完就能用。
 
+源码：<https://github.com/lacrimosa-da/dsh-etf-monitor>
+
 ## 怎么装
 
 把 tgz（或整个源码目录）交给 DSH，让 agent 调 `plugin_manager`：
 
 | 拿到的东西 | `install_bundle` 的 target 写什么 |
 |---|---|
-| `dist/dsh-etf-monitor-0.2.0.tgz` | `C:/path/to/dsh-etf-monitor-0.2.0.tgz` |
+| `dsh-etf-monitor-0.2.0.tgz`（自己 `npm pack` 打，或 Releases 里下） | `C:/path/to/dsh-etf-monitor-0.2.0.tgz` |
 | 源码目录（开发时） | `link:C:/path/to/plugins/dsh-etf-monitor` |
 
 用 `link:` 装时改源码即时生效；用 tgz 装是快照，升级要重新装一次。
 宿主半侧是热装配的，装完通常不用重启；客户端 bundle 要刷新页面才生效。
 
 > 上架插件市场（`dshm_install <id>`）需要先发到 npm 并入精选清单，本包目前只做了
-> `npm pack` 可分发验证，尚未发布。
+> `npm pack` 可分发验证与 GitHub 开源，尚未发布 npm。
 
 ## 它解决什么
 
