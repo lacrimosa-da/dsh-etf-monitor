@@ -115,12 +115,18 @@ console.log(summarize(snap))   // 状态=交易中 已过分钟=190 510300=4.18 
 ## 测试
 
 ```bash
-# 取一份真实快照当 fixture
-curl -s http://127.0.0.1:<port>/dsh-etf-monitor/api -o fixture.json
+# 仓库里自带一份真实快照当 fixture，直接跑就行
+node test/test_client.cjs test/fixture.json
 
-# 把 React 树整棵展开跑一遍，断言关键读数落到了文案里
+# 想用最新数据：从正在跑的插件里取一份
+curl -s http://127.0.0.1:<port>/dsh-etf-monitor/api -o fixture.json
 node test/test_client.cjs fixture.json
 ```
+
+测试做的事：用假的 `window.__ModuleLoader__` 接住自注册描述符，再用假的 React
+把 `main` 与 `sidebar.panellist` 两个槽位的 React 树整棵展开执行一遍（约 1440 个
+节点），断言关键读数真的落到了文案里。不开浏览器也能抓到 `undefined.toFixed`
+这类运行时错误。
 
 ## 许可
 
