@@ -1,0 +1,16 @@
+# ============================================================================
+# dsh-etf-monitor —— bundle patch
+# ============================================================================
+# 把「国家队 ETF 盘中监测」这一行插入 Web profile 的配置树。
+#
+#   cordis.patch.yml → { id: dsh-etf-monitor, name: dsh-etf-monitor }
+#                    → 解析到 lib/index.js（宿主半侧，注册 /dsh-etf-monitor 路由）
+#   package.json 的 dsh.client 声明 → 模块系统把本包扫成浏览器插件，
+#                                    把 client.js 提供给页面
+#
+# 约定：id 必须全局唯一且与包名一致；"id: 值" 那一行不能写行尾注释。
+# ============================================================================
+
+- insert:
+    - id: dsh-etf-monitor
+      name: dsh-etf-monitor

@@ -1,0 +1,46 @@
+{
+  "name": "dsh-etf-monitor",
+  "version": "0.2.0",
+  "description": "DSH 面板里的「国家队 ETF 盘中监测」：纯 Node 直取东财/腾讯行情，零 Python 依赖，四大判读 + 15 只 ETF 篮子 + 分时护盘脉冲 + 资金流。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./snapshot": "./lib/snapshot.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "a-share",
+    "etf",
+    "market-monitor",
+    "national-team",
+    "eastmoney"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "immediately": true
+    }
+  },
+  "license": "MIT"
+}
