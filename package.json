@@ -42,5 +42,17 @@
       "immediately": true
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacrimosa-da/dsh-etf-monitor.git"
+  },
+  "homepage": "https://github.com/lacrimosa-da/dsh-etf-monitor#readme",
+  "bugs": {
+    "url": "https://github.com/lacrimosa-da/dsh-etf-monitor/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "MIT"
 }
