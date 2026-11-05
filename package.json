@@ -15,7 +15,8 @@
     "lib",
     "client.js",
     "cordis.patch.yml",
-    "README.md"
+    "README.md",
+    "screenshots.json"
   ],
   "keywords": [
     "dsh",
